@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Assignment </title>
+</head>
+<style>
+  body{
+    font-family: sans-serif;
+    font-size: 40px;
+    /* font size increased */
+  }
+  #example{
+    border: 5px solid black;
+    padding:10px;
+  }
+    
+</style>
+<body>
+
+     <p id="example"></p>  <!--  maked para with id example for inserting from  JS -->
+   
+
+    <script type="text/javascript">
+       
+       //creating a json object
+       const schooldetails= '{"SchoolName": "Bhusawal High School","Year" : "1971","RankInCity": 1,"NumberOfStudentsStudying" : "500"}';
+
+       //parse of json text file into object
+       const converttoObject=JSON.parse(schooldetails);
+        
+     
+       let valstore="";//maked a empty variable for storing value
+
+       for (let key in converttoObject){
+        valstore+=key+ " = "+ converttoObject[key] +"."+ "<br><br>"; //iterated object with use of for in 
+       }
+
+       document.querySelector("#example").innerHTML=valstore;//printed iterated key and its value as given in assignment output
+    </script>
+</body>
+</html>
